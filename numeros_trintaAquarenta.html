@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha() {
+    document.write("<br><br>");
+}
+
+function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+}
+
+var numeroLimite = 40;
+
+var numeroInicial = 30;
+
+mostra(numeroInicial);
+
+
+
+while (numeroInicial < numeroLimite) {
+
+	
+
+	if (numeroInicial == 32 || numeroInicial == 36) {
+
+		numeroInicial = numeroInicial + 2;
+
+		
+
+	} else {
+
+		numeroInicial = numeroInicial + 1;
+
+		
+	}
+
+	mostra(numeroInicial);
+}
+
+
+
+mostra("FIM");
+
+
+</script>

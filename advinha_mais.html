@@ -1,0 +1,114 @@
+<meta charset="UTF-8">
+
+<input/>
+
+<button>Compare com o meu segredo</button>
+
+<script>
+
+
+function sorteia () {
+
+	return Math.round(Math.random() * 10)
+
+}	
+
+//var segredo = Math.round(Math.random() * 10);	
+
+//itens do array 5,7,10,2,3
+
+function sorteiaNumeros (quantidade) {
+
+	var segredos = [];
+
+	var numero = 1;
+
+	while (numero <= quantidade) {
+
+
+		var numeroAleatorio = sorteia();
+
+		if (numeroAleatorio !== 0 ) {
+
+
+			var achou = false;
+
+			for(var posicao = 0; posicao < segredos.length; posicao ++){
+
+
+			if (segredos [posicao] == numeroAleatorio) {
+
+				achou = true;
+				break;
+			}
+
+		}
+
+
+		if (achou == false) {
+
+		segredos.push(numeroAleatorio);
+		numero++;
+
+		}
+
+
+
+		}
+
+		
+		
+	}
+
+
+	return segredos;
+
+}
+
+var segredos = sorteiaNumeros(5);
+
+
+console.log(segredos);
+
+
+var input = document.querySelector("input"); //ele pega o input do mundo html e joga dentro de uma variavel e recebe como parametro o nome da tag
+
+input.focus(); //para ja deixar o foco no input assim que carregar a pagina
+
+
+function verifica() {              
+
+var achou = false;
+
+//segredos.lenght retorna a quantidade de elementos que o array tem ninguém merece ter que lembrar a quantidade de elementos de um array toda hora neh ;)
+	for(var posicao = 0; posicao < segredos.length;  posicao ++ ){
+
+		if(input.value == segredos[posicao]){  //pega o valor que foi digitado na caixinha do html e compara com o segredo
+
+
+
+		alert("Você ACERTOU!!!");
+		achou = true;
+		break;
+		}
+
+	} 
+
+	if (achou == false){
+
+	alert("Você errou");
+
+	}
+
+	input.value ="";
+
+	input.focus();
+
+}
+
+var button = document.querySelector("button");
+
+button.onclick = verifica;
+
+
+</script>
